@@ -5,7 +5,7 @@
  */
 package controller;
 
-import com.fpt.files.FileAny;
+//import com.fpt.files.FileAny;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import model.Student;
-
+import model.FileAny;
 /**
  *
  * @author hp
@@ -59,15 +59,15 @@ public class InsertServlet extends HttpServlet {
 //        for(Part part : parts) {
 //            String fileName = FileAny.upload(request, part, "assets/images");
 //        }
-
-        String fileName = FileAny.upload(request, path, "assets/images");
+        String newFolder = FileAny.createFolder(request, "truyen1", "assets/images");
+        //String fileName = FileAny.upload(request, path, "assets/images");
         
-        Student student = new Student();
-        student.setName(name);
-        student.setPath(fileName);
-        
-        persist(student);
-        response.sendRedirect("ShowServlet");
+//        Student student = new Student();
+//        student.setName(name);
+//        student.setPath(fileName);
+//        
+//        persist(student);
+//        response.sendRedirect("ShowServlet");
         
     }
 
